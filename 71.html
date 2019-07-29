@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    /*
+        实现一个字符串匹配算法，从长度为n的字符串s中，查找是否存在字符串T，T的长度是m,若存在返回所在位置
+    */
+    
+    // 第一种indexOf
+    // function searchString(str,t){
+    //     if(str.length < t.length) return false;
+    //     var strIndex = str.indexOf(t);
+    //      return strIndex? strIndex : -1;
+    // }
+    
+    // 第二种serach
+    //  function searchString(str,t){
+    //     if(str.length < t.length) return false;
+    //     var strIndex = str.search(t);
+    // return strIndex? strIndex : -1;
+    // }
+
+    // 第三种 mathch
+    // function searchString(str,t){
+    //     if(str.length < t.length) return false;
+    //     var matched = str.match(t);
+    //     return matched ? matched.index : -1
+    // }
+
+    // 第四种正则
+    // function searchString(str, t){
+    // var reg = new RegExp(t, 'g');
+    // return reg.exec(str).index;
+    // };
+
+    // 第五种 循环
+    function searchString(str,t){
+        if (str.length < t.length) return -1
+        for (let i = 0; i < str.length; i++) {
+            if (str.slice(i, i + t.length) === t) return i
+        }
+        return -1
+    }
+
+   console.log( searchString("hello world","ll"))
+    
+    </script>
+</body>
+</html>
